@@ -1,0 +1,136 @@
+package com.cn.my.mywebservice.rpc;
+
+import com.cn.my.mywebcommon.entity.ReturnObject;
+import com.cn.my.mywebservice.service.${className}Service;
+import com.cn.my.mywebserviceapi.entity.${className}DO;
+import com.cn.my.mywebserviceapi.service.${className}FeignApi;
+import io.swagger.annotations.Api;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.http.MediaType;
+
+import java.util.List;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@RefreshScope
+@RestController
+@Api(value = "API - MdcAddressQueryFeignClient", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+public class ${className}FeignClient implements ${className}FeignApi {
+
+	@Autowired
+	private ${className}Service ${classname}Service;
+
+	/***
+	 * 根据主键查询${className}
+	 * @param ${classname}
+	 * @return
+	 */
+	@Override
+	public ReturnObject get${className}(${className}DO ${classname}){
+		ReturnObject returnObject=new ReturnObject();
+		returnObject.setResult(${classname}Service.get${className}(${classname}));
+		return returnObject;
+	}
+
+	/***
+	 * 生成${className}查询列表
+	 * @param ${classname}
+	 * @return
+	 */
+	@Override
+	public ReturnObject get${className}List(@RequestParam ${className}DO ${classname}) {
+		ReturnObject returnObject=new ReturnObject();
+		returnObject.setResult(${classname}Service.get${className}(${classname}));
+		return returnObject;
+	}
+
+	/***
+	 * 根据条件查询总数
+	 * @param ${classname}
+	 * @return
+	 */
+	@Override
+	public ReturnObject count${className}(${className}DO ${classname}){
+		ReturnObject returnObject=new ReturnObject();
+		returnObject.setResult(${classname}Service.count${className}(${classname}));
+		return returnObject;
+	}
+
+	/***
+	 * 插入${className}
+	 * @param ${classname}
+	 * @return
+	 */
+	@Override
+	public ReturnObject save${className}(${className}DO ${classname}){
+		ReturnObject returnObject=new ReturnObject();
+		${classname}Service.save${className}(${classname});
+		return returnObject;
+	}
+
+	/***
+	 * 修改${className}
+	 * @param ${classname}
+	 * @return
+	 */
+	@Override
+	public ReturnObject update${className}(${className}DO ${classname}){
+		ReturnObject returnObject=new ReturnObject();
+		${classname}Service.update${className}(${classname});
+		return returnObject;
+	}
+
+	/***
+	 * 删除${className}
+	 * @param ${classname}Id
+	 * @return
+	 */
+	@Override
+	public ReturnObject remove${className}(Long ${classname}Id){
+		ReturnObject returnObject=new ReturnObject();
+		${classname}Service.remove${className}(${classname}Id);
+		return returnObject;
+	}
+
+	/***
+	 * 批量插入${className}
+	 * @param ${classname}List
+	 * @return
+	 */
+	@Override
+	public ReturnObject batchSave${className}(List<${className}DO> ${classname}List){
+		ReturnObject returnObject=new ReturnObject();
+		${classname}Service.batchSave${className}(${classname}List);
+		return returnObject;
+	}
+
+	/***
+	 * 批量修改${className}
+	 * @param ${classname}List
+	 * @return
+	 */
+	@Override
+	public ReturnObject batchUpdate${className}(List<${className}DO> ${classname}List){
+		ReturnObject returnObject=new ReturnObject();
+		${classname}Service.batchUpdate${className}(${classname}List);
+		return returnObject;
+	}
+
+	/***
+	 * 批量删除${className}
+	 * @param ${classname}Ids
+	 * @return
+	 */
+	@Override
+	public ReturnObject batchRemove${className}(Long[] ${classname}Ids){
+		ReturnObject returnObject=new ReturnObject();
+		${classname}Service.batchRemove${className}(${classname}Ids);
+		return returnObject;
+	}
+}

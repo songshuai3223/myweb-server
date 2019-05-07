@@ -1,0 +1,67 @@
+package ${package}.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
+import lombok.extern.java.Log;
+
+import ${package}.dao.${className}Dao;
+import ${package}.domain.${className}DO;
+import ${package}.service.${className}Service;
+
+
+
+@Service("${classname}Service")
+@Log
+public class ${className}ServiceImpl implements ${className}Service {
+	@Autowired
+	private ${className}Dao ${classname}Dao;
+	
+	@Override
+	public ${className}DO get${className}(${className}DO ${classname}){
+		return ${classname}Dao.selectByPrimaryKey(${classname});
+	}
+	
+	@Override
+	public List<${className}DO> get${className}list(${className}DO ${classname}){
+		return ${classname}Dao.select(${classname});
+	}
+	
+	@Override
+	public int count${className}(${className}DO ${classname}){
+		return ${classname}Dao.selectCount(${classname});
+	}
+	
+	@Override
+	public int save${className}(${className}DO ${classname}){
+		return ${classname}Dao.insertSelective(${classname});
+	}
+	
+	@Override
+	public int update${className}(${className}DO ${classname}){
+		return ${classname}Dao.updateByPrimaryKeySelective(${classname});
+	}
+	
+	@Override
+	public int remove${className}(${pk.attrType} ${pk.attrname}){
+		return ${classname}Dao.deleteByPrimaryKey(${pk.attrname});
+	}
+
+    @Override
+    public int batchSave${className}(List<${className}DO> ${classname}List) {
+        return ${classname}Dao.batchSave${className}(${classname}List);
+    }
+
+    @Override
+    public int batchUpdate${className}(List<${className}DO> ${classname}List) {
+        return ${classname}Dao.batchUpdate${className}(${classname}List);
+    }
+	
+	@Override
+	public int batchRemove${className}(${pk.attrType}[] ${pk.attrname}s){
+		return ${classname}Dao.batchRemove${className}(${pk.attrname}s);
+	}
+	
+}

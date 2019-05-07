@@ -1,0 +1,14 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: 'product'
+  datasource:
+    username: root
+    password: root
+    url: 'jdbc:mysql://localhost:3306/bootdo?useLegacyDatetimeCode=false&serverTimezone=Asia/Hong_Kong&useSSL=false'
+mybatis:
+  type-handlers-package: 'com.cn.my.codegenerator'
+  mapper-locations: 'classpath*:mapper/**/*Mapper.xml'
+  type-aliases-package: 'om.cn.my.codegenerator.bean'
+

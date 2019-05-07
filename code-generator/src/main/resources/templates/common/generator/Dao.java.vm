@@ -1,0 +1,40 @@
+package ${package}.dao;
+
+import ${package}.domain.${className}DO;
+
+import java.util.List;
+import java.util.Map;
+
+import tk.mybatis.mapper.common.Mapper;
+
+/**
+ * ${comments}
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@org.apache.ibatis.annotations.Mapper
+public interface ${className}Dao extends Mapper<${className}DO>{
+
+    List<${className}DO> get${className}List(Map<String,Object> map);
+    /***
+    * 批量插入${className}
+    * @param ${classname}List
+    * @return
+    */
+    int batchSave${className}(List<${className}DO> ${classname}List);
+
+    /***
+     * 批量修改${className}
+     * @param ${classname}List
+     * @return
+     */
+    int batchUpdate${className}(List<${className}DO> ${classname}List);
+
+    /***
+     * 批量删除${className}
+     * @param ${classname}s
+     * @return
+     */
+	int batchRemove${className}(${pk.attrType}[] ${pk.attrname}s);
+}

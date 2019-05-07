@@ -1,0 +1,93 @@
+package com.cn.my.mywebserviceapi.service;
+
+import com.cn.my.mywebserviceapi.entity.${className}DO;
+
+import com.cn.my.mywebcommon.entity.ReturnObject;
+import com.cn.my.mywebserviceapi.service.hystrix.${className}FeignHystrix;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@FeignClient(value = "myweb-provider-${classname}", configuration = OAuth2FeignAutoConfiguration.class, fallback = ${className}FeignHystrix.class)
+public interface ${className}FeignApi {
+    /***
+     * 根据主键查询${className}
+     * @param ${classname}
+     * @return
+     */
+    @GetMapping(value = "/api/${classname}/get")
+    ReturnObject get${className}(${className}DO ${classname});
+
+    /***
+     * 根据实体参数查询${className}
+     * @param ${classname}
+     * @return
+     */
+    @PostMapping(value = "/api/${classname}/list")
+    @ResponseBody
+    ReturnObject get${className}List(${className}DO ${classname});
+
+    /***
+     * 根据条件查询总数
+     * @param ${classname}
+     * @return
+     */
+    @PostMapping(value = "/api/${classname}/count")
+    ReturnObject count${className}(${className}DO ${classname});
+
+    /***
+     * 插入${className}
+     * @param ${classname}
+     * @return
+     */
+    @PostMapping(value = "/api/${classname}/save")
+    ReturnObject save${className}(${className}DO ${classname});
+
+    /***
+     * 修改${className}
+     * @param  ${classname}
+     * @return
+     */
+    @PostMapping(value = "/api/${classname}/update")
+    ReturnObject update${className}(${className}DO ${classname});
+
+    /***
+     * 删除${className}
+     * @param ${pk.attrname}
+     * @return
+     */
+    @PostMapping(value = "/api/${classname}/delete")
+    ReturnObject remove${className}(Long ${classname}Id);
+
+    /***
+     * 批量插入${className}
+     * @param ${classname}List
+     * @return
+     */
+    @PostMapping(value = "/api/${classname}/batchsave")
+    ReturnObject batchSave${className}(List<${className}DO> ${classname}List);
+
+    /***
+     * 批量修改${className}
+     * @param ${classname}List
+     * @return
+     */
+    @PostMapping(value = "/api/${classname}/batchupdate")
+    ReturnObject batchUpdate${className}(List<${className}DO> ${classname}List);
+
+    /***
+     * 批量删除${className}
+     * @param ${pk.attrname}s
+     * @return
+     */
+    @PostMapping(value = "/api/${classname}/batchdelete")
+    ReturnObject batchRemove${className}(Long[] ${classname}Ids);
+}

@@ -1,0 +1,107 @@
+package com.cn.my.mywebserviceapi.service.hystrix;
+
+import com.cn.my.mywebcommon.entity.ReturnObject;
+import com.cn.my.mywebserviceapi.entity.${className}DO;
+import com.cn.my.mywebserviceapi.service.${className}FeignApi;
+
+import java.util.List;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@Component
+public class ${className}FeignHystrix implements ${className}FeignApi {
+    /***
+    * 根据主键查询${className}
+    * @param ${classname}
+	* @return
+	*/
+    @Override
+	public ReturnObject get${className}(${className}DO ${classname}){
+	    return null;
+    }
+
+    /***
+     * 根据实体参数查询${className}
+     * @param ${classname}
+     * @return
+     */
+    @Override
+    public ReturnObject get${className}List(${className}DO ${classname}){
+        return null;
+    }
+
+    /***
+     * 根据条件查询总数
+     * @param ${classname}
+     * @return
+     */
+    @Override
+    public ReturnObject count${className}(${className}DO ${classname}){
+        return null;
+    }
+
+    /***
+     * 插入${className}
+     * @param ${classname}
+     * @return
+     */
+    @Override
+    public ReturnObject save${className}(${className}DO ${classname}){
+        return null;
+    }
+
+    /***
+     * 修改${className}
+     * @param ${classname}
+     * @return
+     */
+    @Override
+    public ReturnObject update${className}(${className}DO ${classname}){
+	    return null;
+    }
+
+    /***
+     * 删除${className}
+     * @param ${classname}Id
+     * @return
+     */
+    @Override
+    public ReturnObject remove${className}(Long ${classname}Id){
+        return null;
+    }
+
+    /***
+     * 批量插入${className}
+     * @param ${classname}List
+     * @return
+     */
+    @Override
+    public ReturnObject batchSave${className}(List<${className}DO> ${classname}List){
+        return null;
+    }
+
+    /***
+     * 批量修改${className}
+     * @param ${classname}List
+     * @return
+     */
+    @Override
+    public ReturnObject batchUpdate${className}(List<${className}DO> ${classname}List){
+        return null;
+    }
+
+    /***
+     * 批量删除${className}
+     * @param ${classname}Ids
+     * @return
+     */
+    @Override
+    public ReturnObject batchRemove${className}(Long[] ${classname}Ids){
+        return null;
+    }
+}

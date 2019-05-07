@@ -1,0 +1,78 @@
+package ${package}.service;
+
+import ${package}.domain.${className}DO;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * ${comments}
+ * 
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+public interface ${className}Service {
+    /***
+    * 根据主键查询${className}
+    * @param ${classname}
+	* @return
+	*/
+	${className}DO get${className}(${className}DO ${classname});
+
+    /***
+     * 根据实体参数查询${className}
+     * @param ${classname}
+     * @return
+     */
+	List<${className}DO> get${className}list(${className}DO ${classname});
+
+    /***
+     * 根据条件查询总数
+     * @param ${classname}
+     * @return
+     */
+	int count${className}(${className}DO ${classname});
+
+    /***
+     * 插入${className}
+     * @param ${classname}
+     * @return
+     */
+	int save${className}(${className}DO ${classname});
+
+    /***
+     * 修改${className}
+     * @param  ${classname}
+     * @return
+     */
+	int update${className}(${className}DO ${classname});
+
+    /***
+     * 删除${className}
+     * @param ${pk.attrname}
+     * @return
+     */
+	int remove${className}(${pk.attrType} ${pk.attrname});
+
+    /***
+     * 批量插入${className}
+     * @param ${classname}List
+     * @return
+     */
+    int batchSave${className}(List<${className}DO> ${classname}List);
+
+    /***
+     * 批量修改${className}
+     * @param ${classname}List
+     * @return
+     */
+    int batchUpdate${className}(List<${className}DO> ${classname}List);
+
+    /***
+     * 批量删除${className}
+     * @param ${pk.attrname}s
+     * @return
+     */
+	int batchRemove${className}(${pk.attrType}[] ${pk.attrname}s);
+}

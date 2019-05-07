@@ -1,0 +1,19 @@
+server:
+  port: 8761
+
+# 安全认证的配置
+security:
+  basic:
+    enabled: false
+#  user:
+#    name: admin  # 用户名
+#    password: admin   # 用户密码
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/
